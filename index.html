@@ -44,7 +44,7 @@
     display: flex;
     gap: 8px;
   }
-  .controls button {
+  .controls button, .controls a {
     background: white;
     border: 2px solid var(--orange);
     color: var(--orange);
@@ -55,6 +55,8 @@
     font-family: inherit;
     font-weight: bold;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-decoration: none;
+    display: inline-block;
   }
   .controls button.active {
     background: var(--orange);
@@ -716,6 +718,8 @@
 <body>
 
 <div class="controls">
+  <a href="./poster.html">ポスター</a>
+  <a href="./leaflet.html">リーフレット</a>
   <button id="speakerToggle" onclick="document.body.classList.toggle('show-scripts'); this.classList.toggle('active');">話し手モード</button>
   <button onclick="window.print()">印刷</button>
 </div>

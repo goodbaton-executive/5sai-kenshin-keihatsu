@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<title>5歳児健診でつなぐ こどもまんなか社会 — ポスター（A3）</title>
+<style>
+  :root {
+    --orange: #E8742C;
+    --orange-bg: #FCE4D6;
+    --orange-light: #FDF1E8;
+    --teal: #3E8FAB;
+    --teal-bg: #DCEEF5;
+    --teal-light: #EEF6FA;
+    --green: #7FA982;
+    --green-bg: #E3EEDD;
+    --green-light: #F1F7EE;
+    --yellow: #FFF8D9;
+    --dark: #2D2D2D;
+    --gray: #777;
+    --salmon: #FCE4D6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Noto Sans JP', sans-serif;
+    background: #EFEAE3;
+    color: var(--dark);
+    line-height: 1.6;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .toolbar {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+  }
+  .toolbar a, .toolbar button {
+    background: white;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .poster {
+    width: 297mm;
+    min-height: 420mm;
+    background: white;
+    border: 32px solid var(--salmon);
+    padding: 32px 36px 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    gap: 24px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 4px dotted var(--orange-bg);
+  }
+  .header .eyebrow {
+    font-size: 16px;
+    color: var(--gray);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 48px;
+    color: var(--orange);
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .header .sub {
+    font-size: 20px;
+    color: var(--dark);
+    line-height: 1.7;
+  }
+
+  /* Intro section */
+  .intro {
+    background: var(--orange-light);
+    border-radius: 16px;
+    padding: 18px 24px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  .intro b { color: var(--orange); font-size: 19px; }
+
+  /* 9 themes grid */
+  .themes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    flex: 1;
+  }
+  .card {
+    border-radius: 14px;
+    padding: 16px 14px;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card .num {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+  }
+  .card h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 4px 0;
+  }
+  .card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--dark);
+  }
+  .card .axis {
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px dotted #DDD;
+  }
+
+  .card.kodomo { background: var(--orange-light); border-color: var(--orange); }
+  .card.kodomo .num { background: var(--orange); }
+  .card.kodomo h3 { color: var(--orange); }
+
+  .card.seikatsu { background: var(--teal-light); border-color: var(--teal); }
+  .card.seikatsu .num { background: var(--teal); }
+  .card.seikatsu h3 { color: var(--teal); }
+
+  .card.kankyo { background: var(--green-light); border-color: var(--green); }
+  .card.kankyo .num { background: var(--green); }
+  .card.kankyo h3 { color: var(--green); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 4px dotted var(--orange-bg);
+  }
+  .footer .message {
+    font-size: 18px;
+    color: var(--orange);
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .footer .credit {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .toolbar { display: none; }
+    .poster {
+      box-shadow: none;
+      width: 100%;
+      min-height: auto;
+    }
+    @page { size: A3 portrait; margin: 0; }
+  }
+
+  @media (max-width: 900px) {
+    body { padding: 8px; }
+    .poster {
+      width: 100%;
+      min-height: auto;
+      border-width: 14px;
+      padding: 18px;
+    }
+    .header h1 { font-size: 28px; }
+    .header .sub { font-size: 15px; }
+    .header .eyebrow { font-size: 12px; }
+    .intro { font-size: 13px; padding: 12px 16px; }
+    .intro b { font-size: 15px; }
+    .themes {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .card h3 { font-size: 16px; }
+    .card p { font-size: 12px; }
+    .footer .message { font-size: 14px; }
+    .footer .credit { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="./">スライド</a>
+  <a href="./leaflet.html">リーフレット</a>
+  <button onclick="window.print()">印刷（A3縦）</button>
+</div>
+
+<div class="poster">
+
+  <div class="header">
+    <div class="eyebrow">日本小児保健協会 提言より</div>
+    <h1>5歳児健診でつなぐ<br>こどもまんなか社会</h1>
+    <div class="sub">健診を活かして、こどもの育ちをいっしょに支える<b>9つのテーマ</b></div>
+  </div>
+
+  <div class="intro">
+    5歳児健診は、就学前のいちばん大切な節目。<br>
+    <b>健康確認だけでなく、こどもの育ちをいっしょに見つめる時間です。</b>
+  </div>
+
+  <div class="themes">
+
+    <div class="card kodomo">
+      <div class="num">1</div>
+      <h3>こどものこえを聴く</h3>
+      <p>こどもの気持ちや考えに耳をかたむけ、安心して話せる雰囲気をつくります。ことばにならない思いも受けとめます。</p>
+      <div class="axis">こども ― 主体、権利、発達</div>
+    </div>
+
+    <div class="card kodomo">
+      <div class="num">2</div>
+      <h3>情緒の育ちを支える</h3>
+      <p>できないことを問題にせず、こどもの強みや育つ可能性に目を向けます。多職種でいっしょに支えます。</p>
+      <div class="axis">こども ― 主体、権利、発達</div>
+    </div>
+
+    <div class="card seikatsu">
+      <div class="num">3</div>
+      <h3>遊びと、からだを動かす</h3>
+      <p>「うまくできるか」より「夢中になって楽しめるか」を大切に。いろいろな動きを楽しむ経験が育ちの土台になります。</p>
+      <div class="axis">生活、健康 ― 育ちの基盤</div>
+    </div>
+
+    <div class="card seikatsu">
+      <div class="num">4</div>
+      <h3>歯と、食べることの育ち</h3>
+      <p>歯みがき習慣、フッ化物の活用、家族との食卓。「食べる楽しさ」が一生の健康とQOLを支えます。</p>
+      <div class="axis">生活、健康 ― 育ちの基盤</div>
+    </div>
+
+    <div class="card seikatsu">
+      <div class="num">5</div>
+      <h3>生活リズムと、体のこと</h3>
+      <p>早寝、早起き、朝ごはん、運動。体重の数字ではなく、こどもが安心して育つことを軸に考えます。</p>
+      <div class="axis">生活、健康 ― 育ちの基盤</div>
+    </div>
+
+    <div class="card seikatsu">
+      <div class="num">6</div>
+      <h3>事故から守る</h3>
+      <p>食事中の窒息、転落、交通事故。食材の大きさ、姿勢、見守りなど、今日からできる工夫があります。</p>
+      <div class="axis">生活、健康 ― 育ちの基盤</div>
+    </div>
+
+    <div class="card seikatsu">
+      <div class="num">7</div>
+      <h3>就学前の予防接種</h3>
+      <p>就学前の1年間に、MRワクチン第2期の接種期間があります。義務ではなく、未来を守る選択として。</p>
+      <div class="axis">生活、健康 ― 育ちの基盤</div>
+    </div>
+
+    <div class="card kankyo">
+      <div class="num">8</div>
+      <h3>スマホやタブレットとのつきあい方</h3>
+      <p>禁止より「家族で話し合って選ぶ」視点を。就学後の一人一台端末への備えにもなります。</p>
+      <div class="axis">環境、社会 ― 支える仕組み</div>
+    </div>
+
+    <div class="card kankyo">
+      <div class="num">9</div>
+      <h3>地域でこどもを支える</h3>
+      <p>はじめの100か月。家庭、園、地域、専門職がいっしょに、多様な背景を持つこどもを見守る仕組みを。</p>
+      <div class="axis">環境、社会 ― 支える仕組み</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="message">気になることがあれば、ひとりで抱えこまず、いっしょに考えていきましょう</div>
+    <div class="credit">
+      監修：公益社団法人 日本小児保健協会／健やか親子21・成育医療等基本方針推進委員会<br>
+      提言「5歳児健康診査を活用した『こどもまんなか社会』の実現に向けた啓発の推進」（2026年5月21日）に基づく
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
