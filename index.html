@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="description" content="日本小児保健協会 健やか親子21・成育医療等基本方針推進委員会による5歳児健診啓発スライド（委員会内プレビュー）">
+<title>5歳児健診でつなぐ こどもまんなか社会 — 保護者向け啓発スライド（委員会内プレビュー）</title>
+<style>
+  :root {
+    --orange: #E8742C;
+    --orange-bg: #FCE4D6;
+    --orange-light: #FDF1E8;
+    --teal: #3E8FAB;
+    --teal-bg: #DCEEF5;
+    --teal-light: #EEF6FA;
+    --green: #7FA982;
+    --green-bg: #E3EEDD;
+    --green-light: #F1F7EE;
+    --yellow: #FFF8D9;
+    --yellow-border: #F0E6B0;
+    --dark: #2D2D2D;
+    --gray: #777;
+    --light-gray: #DDD;
+    --salmon: #FCE4D6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Noto Sans JP', sans-serif;
+    background: #EFEAE3;
+    color: var(--dark);
+    line-height: 1.7;
+    padding: 24px 0;
+  }
+
+  .controls {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+  }
+  .controls button {
+    background: white;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .controls button.active {
+    background: var(--orange);
+    color: white;
+  }
+
+  .deck {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .slide {
+    background: white;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 28px solid var(--salmon);
+    margin-bottom: 32px;
+    padding: 48px 64px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-num {
+    position: absolute;
+    bottom: 18px;
+    right: 24px;
+    font-size: 14px;
+    color: var(--gray);
+  }
+
+  .axis-tag {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 8px 8px 8px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+  }
+  .axis-tag.kodomo { background: var(--orange); }
+  .axis-tag.seikatsu { background: var(--teal); }
+  .axis-tag.kankyo { background: var(--green); }
+
+  .theme-title {
+    font-size: 44px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .theme-title.kodomo { color: var(--orange); }
+  .theme-title.seikatsu { color: var(--teal); }
+  .theme-title.kankyo { color: var(--green); }
+
+  .theme-sub {
+    font-size: 22px;
+    color: var(--gray);
+    margin-bottom: 32px;
+    font-weight: normal;
+  }
+
+  /* Type A — Cover / End */
+  .slide.type-a {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cover-title {
+    font-size: 28px;
+    color: var(--dark);
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+  }
+  .cover-main {
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--orange);
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+  .cover-sub {
+    font-size: 22px;
+    color: var(--gray);
+    margin-bottom: 60px;
+    letter-spacing: 0.05em;
+  }
+  .cover-credit {
+    font-size: 18px;
+    color: var(--dark);
+    margin-top: 40px;
+    line-height: 1.8;
+  }
+  .cover-frame {
+    border: 3px solid var(--orange);
+    padding: 32px 56px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+
+  /* Type B — 9 theme layout */
+  .slide.type-b .body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 36px;
+    flex: 1;
+    align-items: start;
+  }
+  .body-text {
+    font-size: 21px;
+    line-height: 2;
+  }
+  .body-text ul {
+    list-style: none;
+  }
+  .body-text li {
+    padding-left: 28px;
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .body-text li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 14px;
+  }
+  .body-text.kodomo li::before { color: var(--orange); }
+  .body-text.seikatsu li::before { color: var(--teal); }
+  .body-text.kankyo li::before { color: var(--green); }
+
+  .hl-orange { color: var(--orange); font-weight: bold; }
+  .hl-teal { color: var(--teal); font-weight: bold; }
+  .hl-green { color: var(--green); font-weight: bold; }
+
+  .keypoint-box {
+    background: var(--yellow);
+    border: 2px solid var(--yellow-border);
+    border-radius: 16px;
+    padding: 28px 32px;
+  }
+  .keypoint-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: var(--dark);
+  }
+  .keypoint-box ul {
+    list-style: none;
+  }
+  .keypoint-box li {
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .keypoint-box li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-weight: bold;
+  }
+
+  /* Type C — Diagram center */
+  .slide.type-c {
+    align-items: center;
+    text-align: center;
+  }
+  .slide.type-c h2 {
+    font-size: 44px;
+    color: var(--orange);
+    margin-bottom: 24px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+  .slide.type-c .lead {
+    font-size: 24px;
+    color: var(--dark);
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+  .slide.type-c .visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .slide.type-c .closing {
+    font-size: 22px;
+    color: var(--gray);
+    margin-top: 24px;
+  }
+
+  /* Lifecourse timeline */
+  .timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    max-width: 900px;
+  }
+  .timeline-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 80px;
+  }
+  .timeline-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--gray);
+  }
+  .timeline-dot.active {
+    width: 40px;
+    height: 40px;
+    background: var(--orange);
+  }
+  .timeline-label {
+    font-size: 16px;
+    color: var(--gray);
+  }
+  .timeline-label.active {
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .timeline-line {
+    flex: 1;
+    height: 4px;
+    background: var(--light-gray);
+    min-width: 40px;
+  }
+
+  /* BPS Venn */
+  .venn {
+    position: relative;
+    width: 400px;
+    height: 300px;
+  }
+  .venn-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .venn-bio { background: #FFD994; top: 0; left: 100px; color: #8C5A20; }
+  .venn-psy { background: #F6C7C7; top: 100px; left: 0; color: #9C4848; }
+  .venn-soc { background: #C6E0B4; top: 100px; left: 200px; color: #4F7042; }
+
+  /* Type D — Values BPS */
+  .slide.type-d {
+    align-items: center;
+    text-align: center;
+  }
+  .slide.type-d h2 {
+    font-size: 40px;
+    color: var(--dark);
+    margin-bottom: 16px;
+    background: var(--orange-light);
+    padding: 12px 32px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  .slide.type-d .happy {
+    font-size: 28px;
+    color: var(--orange);
+    font-weight: bold;
+    margin: 24px 0 32px;
+    letter-spacing: 0.05em;
+  }
+  .slide.type-d .grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+  }
+  .value-list {
+    text-align: left;
+    font-size: 22px;
+    line-height: 2;
+  }
+  .value-list li {
+    list-style: none;
+    padding-left: 24px;
+    position: relative;
+  }
+  .value-list li::before {
+    content: '•';
+    color: var(--orange);
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+  }
+  .bps-box {
+    background: var(--orange-light);
+    border: 2px solid var(--orange);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+  .bps-label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: var(--dark);
+  }
+
+  /* Type E — Take Home Message */
+  .slide.type-e {
+    background: linear-gradient(180deg, var(--orange-light) 0%, white 100%);
+  }
+  .thm-banner {
+    background: var(--orange-light);
+    border: 2px solid var(--orange);
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 20px;
+    line-height: 1.8;
+  }
+  .thm-banner b { color: var(--orange); font-size: 22px; }
+  .thm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 24px;
+    flex: 1;
+    align-items: center;
+  }
+  .thm-axis {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .thm-axis h3 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .thm-axis p.sub {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+  .thm-axis ul {
+    list-style: none;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .thm-axis li { margin-bottom: 4px; }
+  .thm-axis.kodomo h3 { color: var(--orange); }
+  .thm-axis.seikatsu h3 { color: var(--teal); }
+  .thm-axis.kankyo h3 { color: var(--green); }
+  .thm-center {
+    text-align: center;
+    padding: 16px;
+  }
+  .thm-center svg { width: 220px; height: 220px; }
+
+  /* Pyramid (slide 15) */
+  .pyramid-wrap {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+  }
+  .pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .pyramid-layer {
+    text-align: center;
+    padding: 14px 24px;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 4px;
+  }
+  .pyramid-top {
+    width: 200px;
+    background: var(--orange);
+    color: white;
+  }
+  .pyramid-mid {
+    width: 380px;
+    background: #F2A461;
+  }
+  .pyramid-bottom {
+    width: 560px;
+    background: #FBDDB6;
+  }
+  .pyramid-desc {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 360px;
+  }
+  .pyramid-desc h4 {
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+
+  /* Action cards (slide 16) */
+  .action-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    flex: 1;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .action-card {
+    background: var(--orange-light);
+    border: 2px solid var(--orange);
+    border-radius: 16px;
+    padding: 18px 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .action-num {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .action-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--dark);
+  }
+  .action-card svg { width: 48px; height: 48px; }
+
+  /* Speaker script */
+  .speaker {
+    display: none;
+    background: #F8F4EC;
+    border-left: 4px solid var(--orange);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 20px;
+    margin-bottom: 32px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--dark);
+  }
+  .speaker::before {
+    content: '🎤 話し手用スクリプト';
+    display: block;
+    font-weight: bold;
+    color: var(--orange);
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  body.show-scripts .speaker { display: block; }
+
+  /* SVG illustrations */
+  .illust { stroke: #333; stroke-width: 1.6; fill: none; }
+  .illust .fill-orange { fill: var(--orange); stroke: var(--orange); }
+  .illust .fill-warm { fill: #F8C9A1; stroke: #F8C9A1; }
+
+  /* Print */
+  @media print {
+    body { background: white; padding: 0; }
+    .controls { display: none; }
+    .deck { max-width: none; }
+    .slide {
+      margin: 0;
+      page-break-after: always;
+      box-shadow: none;
+      width: 100vw;
+      height: 100vh;
+      aspect-ratio: auto;
+    }
+    .speaker { display: none !important; }
+    @page { size: A4 landscape; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button id="speakerToggle" onclick="document.body.classList.toggle('show-scripts'); this.classList.toggle('active');">話し手モード</button>
+  <button onclick="window.print()">印刷</button>
+</div>
+
+<div class="deck">
+
+<!-- ============ 表紙 ============ -->
+<section class="slide type-a">
+  <div class="cover-title">日本小児保健協会 提言より</div>
+  <div class="cover-frame">
+    <div class="cover-main">5歳児健診でつなぐ<br>こどもまんなか社会</div>
+  </div>
+  <div class="cover-sub">〜 健診を活かして、こどもの育ちをいっしょに支える9つのテーマ 〜</div>
+  <div class="cover-credit">
+    監修：日本小児保健協会<br>
+    健やか親子21・成育医療等基本方針推進委員会
+  </div>
+  <div class="page-num">表紙</div>
+</section>
+<div class="speaker">今日は、5歳児健診を活かして、こどもの育ちをいっしょに支えていくための9つのテーマについてお話しします。健診を、健康を確認する場としてだけでなく、ご家庭や地域でこどもの育ちをいっしょに見つめる時間として、一緒に考えていきましょう。</div>
+
+<!-- ============ #1 5歳児健診って？ ============ -->
+<section class="slide type-c">
+  <h2>5歳児健診って、何をする時間？</h2>
+  <div class="lead">就学前のいちばん大切な節目。<br>健康確認だけでなく、<span class="hl-orange">こどもの育ちをいっしょに見つめる時間</span>です。</div>
+  <div class="visual">
+    <div class="timeline">
+      <div class="timeline-node"><div class="timeline-dot"></div><div class="timeline-label">妊娠期</div></div>
+      <div class="timeline-line"></div>
+      <div class="timeline-node"><div class="timeline-dot"></div><div class="timeline-label">0歳</div></div>
+      <div class="timeline-line"></div>
+      <div class="timeline-node"><div class="timeline-dot"></div><div class="timeline-label">1歳</div></div>
+      <div class="timeline-line"></div>
+      <div class="timeline-node"><div class="timeline-dot"></div><div class="timeline-label">3歳</div></div>
+      <div class="timeline-line"></div>
+      <div class="timeline-node"><div class="timeline-dot active"></div><div class="timeline-label active">5歳</div></div>
+      <div class="timeline-line"></div>
+      <div class="timeline-node"><div class="timeline-dot"></div><div class="timeline-label">就学</div></div>
+      <div class="timeline-line"></div>
+      <div class="timeline-node"><div class="timeline-dot"></div><div class="timeline-label">学童期</div></div>
+    </div>
+  </div>
+  <div class="closing">身長や体重だけでなく、気持ち、生活、人との関わりまで、いろんな視点で。</div>
+  <div class="page-num">1 / 17</div>
+</section>
+<div class="speaker">5歳児健診は、就学前のいちばん大切な節目に行う、こどもの育ち全体を見つめる時間です。身長や体重、歯の確認だけでなく、こどもの気持ち、生活、人との関わりなど、いろんな視点でこどもの今を見ていきます。</div>
+
+<!-- ============ #2 なぜ「5歳」なの？ ============ -->
+<section class="slide type-c">
+  <h2>なぜ「5歳」でやるの？</h2>
+  <div class="lead">からだ、こころ、人との関わりが<br><span class="hl-orange">大きく育つ時期</span>。学校生活への準備期でもあります。</div>
+  <div class="visual">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 800px; width: 100%;">
+      <div style="text-align: center;">
+        <div style="font-size: 56px;">🌱</div>
+        <div style="font-size: 22px; font-weight: bold; color: var(--orange); margin-top: 12px;">からだ</div>
+        <div style="font-size: 16px; color: var(--gray); margin-top: 8px;">運動の幅が広がり、いろいろな動きを楽しめるように</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 56px;">💛</div>
+        <div style="font-size: 22px; font-weight: bold; color: var(--orange); margin-top: 12px;">こころ</div>
+        <div style="font-size: 16px; color: var(--gray); margin-top: 8px;">気持ちを伝える力、考える力が大きく育つ時期</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 56px;">🤝</div>
+        <div style="font-size: 22px; font-weight: bold; color: var(--orange); margin-top: 12px;">人との関わり</div>
+        <div style="font-size: 16px; color: var(--gray); margin-top: 8px;">友だち、先生、地域の人との関係が広がるとき</div>
+      </div>
+    </div>
+  </div>
+  <div class="closing">この時期に気づいたことが、その後の育ちを支える土台になります。</div>
+  <div class="page-num">2 / 17</div>
+</section>
+<div class="speaker">5歳ごろは、からだ、こころ、ことば、人とのつながりが大きく育つ時期です。学校生活へ向けた準備期でもあり、この時期に気づいたことが、その後の育ちを支える土台になります。</div>
+
+<!-- ============ #3 こどもまんなか社会とは ============ -->
+<section class="slide type-d">
+  <h2>こどもまんなか社会と5歳児健診</h2>
+  <div class="happy">こども一人ひとりが尊重され、安心して育ち、未来に希望を持てる状態へ</div>
+  <div class="grid">
+    <ul class="value-list">
+      <li>こころとからだの健やかな成長</li>
+      <li>安全で安心できる環境</li>
+      <li>教育や医療、福祉へのつながり</li>
+      <li>こどもの意見や気持ちの尊重</li>
+      <li>家庭や地域とのつながり</li>
+      <li>子育ての喜びを感じられること</li>
+    </ul>
+    <div class="bps-box">
+      <div class="bps-label">こどもの幸せを<br>3つの面から</div>
+      <div class="venn" style="margin: 0 auto; transform: scale(0.7); transform-origin: center;">
+        <div class="venn-circle venn-bio">からだ</div>
+        <div class="venn-circle venn-psy">こころ</div>
+        <div class="venn-circle venn-soc">環境・社会</div>
+      </div>
+      <div style="font-size: 14px; color: var(--gray); margin-top: 12px;">バイオサイコソーシャル</div>
+    </div>
+  </div>
+  <div class="page-num">3 / 17</div>
+</section>
+<div class="speaker">こども基本法では、こども一人ひとりが尊重され、安心して育ち、未来に希望を持てる状態を目指しています。これを支えるのが、からだ、こころ、環境や社会の3つの面からこどもの幸せを考える視点です。</div>
+
+<!-- ============ #4 Take Home Message ============ -->
+<section class="slide type-e">
+  <div class="thm-banner">
+    <b>啓発 = 対話 → 理解 → 関わり方が変わる → 安心感のループ</b><br>
+    <span style="font-size: 16px; color: var(--gray);">健診は、ご家族と話し合い、行動をいっしょに考えていくプロセスです</span>
+  </div>
+  <div class="thm-grid">
+    <div class="thm-axis kodomo" style="background: var(--orange-light); border: 2px solid var(--orange); border-radius: 12px;">
+      <h3>こども</h3>
+      <p class="sub">権利・主体・発達</p>
+      <ul>
+        <li>(1) こどものこえを聴く</li>
+        <li>(2) 情緒の育ちを支える</li>
+      </ul>
+    </div>
+    <div class="thm-center">
+      <svg viewBox="0 0 200 200" class="illust">
+        <!-- 家族3人のシンプル線画 -->
+        <circle cx="60" cy="60" r="18" />
+        <path d="M42 90 Q42 130 60 130 Q78 130 78 90" />
+        <circle cx="140" cy="60" r="18" />
+        <path d="M122 90 Q122 130 140 130 Q158 130 158 90" />
+        <circle cx="100" cy="100" r="14" class="fill-warm" />
+        <path d="M86 130 Q86 160 100 160 Q114 160 114 130" class="fill-warm" />
+        <text x="100" y="190" text-anchor="middle" font-size="14" fill="#777" stroke="none">いっしょに育つ</text>
+      </svg>
+    </div>
+    <div class="thm-axis kankyo" style="background: var(--green-light); border: 2px solid var(--green); border-radius: 12px;">
+      <h3>環境・社会</h3>
+      <p class="sub">支える仕組み</p>
+      <ul>
+        <li>(8) デジタル環境とのつきあい</li>
+        <li>(9) 地域でこどもを支える</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top: 16px;">
+    <div class="thm-axis seikatsu" style="background: var(--teal-light); border: 2px solid var(--teal); border-radius: 12px; padding: 16px 24px;">
+      <h3 style="display: inline-block; margin-right: 16px;">生活・健康</h3>
+      <span class="sub" style="display: inline-block;">日常生活を通じた育ちの基盤</span>
+      <div style="font-size: 14px; margin-top: 6px; line-height: 1.6;">
+        (3) 遊びと運動・身体活動　／　(4) 歯と食べることの育ち　／　(5) 生活リズムと体のこと　／　(6) 事故から守る　／　(7) 就学前の予防接種
+      </div>
+    </div>
+  </div>
+  <div class="page-num">4 / 17</div>
+</section>
+<div class="speaker">5歳児健診で大切にしたいテーマは、こども・生活・社会の3つの軸に分けて、合計9つあります。健診は情報を一方的に伝える場ではなく、ご家族と話し合い、関わり方をいっしょに考えていくプロセスです。これからひとつずつご紹介していきます。</div>
+
+<!-- ============ #5 (1)こどものこえを聴く ============ -->
+<section class="slide type-b">
+  <span class="axis-tag kodomo">こども ― 権利・主体・発達</span>
+  <div class="theme-title kodomo">(1) こどもの"こえ"を聴く</div>
+  <div class="theme-sub">〜 こどもの「思っていること」を大切に受けとめる時間 〜</div>
+  <div class="body">
+    <div class="body-text kodomo">
+      <ul>
+        <li>こどもの気持ちや考えに耳をかたむけ、<span class="hl-orange">安心して話せる雰囲気</span>をつくります。</li>
+        <li>ことばにならない思いや願いも、態度や行動から受けとめます。</li>
+        <li>「<span class="hl-orange">尊重されている</span>」と感じる体験が、こどもの自己肯定感を育てます。</li>
+      </ul>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>こどもの意見や気持ちを尊重します</li>
+        <li>ことばにならないサインも受けとめます</li>
+        <li>こどもが安心して表現できる場をつくります</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">5 / 17</div>
+</section>
+<div class="speaker">こどもが自分の気持ちや考えを伝え始める時期です。ことばだけでなく、態度や行動からも、こどものこえを受けとめます。「話を聴いてもらえた」という体験が、こどもの自己肯定感を育てます。</div>
+
+<!-- ============ #6 (2)情緒の育ち ============ -->
+<section class="slide type-b">
+  <span class="axis-tag kodomo">こども ― 権利・主体・発達</span>
+  <div class="theme-title kodomo">(2) 情緒の育ちを支える</div>
+  <div class="theme-sub">〜 できないことより、こどもの強みに目を向ける 〜</div>
+  <div class="body">
+    <div class="body-text kodomo">
+      <ul>
+        <li>5歳ごろは、認知、ことば、運動、情緒、社会性が大きく育つ時期です。</li>
+        <li>かんしゃくや、過度の不安、なかなか話せないなどの様子は、<span class="hl-orange">育ちのプロセスの一つ</span>です。</li>
+        <li>問題として捉えるより、<span class="hl-orange">こどもの強みや育つ可能性</span>に目を向け、環境を整えていきましょう。</li>
+      </ul>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>こどもの強みや個性を尊重します</li>
+        <li>多職種でいっしょに育ちを支えます</li>
+        <li>必要なときは、専門の相談につなぎます</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">6 / 17</div>
+</section>
+<div class="speaker">5歳ごろは、認知、ことば、運動、情緒、社会性が大きく育つ時期。かんしゃくや不安などの様子も、育ちのプロセスの一つです。問題として捉えるより、こどもの強みや育つ可能性に目を向けていきましょう。</div>
+
+<!-- ============ #7 (3)遊びと運動 ============ -->
+<section class="slide type-b">
+  <span class="axis-tag seikatsu">生活・健康 ― 日常生活を通じた育ちの基盤</span>
+  <div class="theme-title seikatsu">(3) 遊びと、からだを動かすこと</div>
+  <div class="theme-sub">〜 「うまくできるか」より「夢中になって楽しめるか」 〜</div>
+  <div class="body">
+    <div class="body-text seikatsu">
+      <ul>
+        <li>遊びは、からだの発達だけでなく、<span class="hl-teal">こころと社会性</span>を育てます。</li>
+        <li>特定の運動が「できる、できない」ではなく、<span class="hl-teal">いろいろな動きを楽しむ経験</span>が大切です。</li>
+        <li>家庭や園、地域で自然に身体を動かせる環境が、育ちの土台になります。</li>
+      </ul>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>多様な動きを楽しむ経験を大切に</li>
+        <li>幼児期の運動指針を活用します</li>
+        <li>安心して遊び込める環境づくり</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">7 / 17</div>
+</section>
+<div class="speaker">遊びは、からだの発達だけでなく、こころと社会性を育てる大切な経験です。特定の運動が「できる、できない」より、夢中になって楽しめる経験を大切にしていけるとよいですね。</div>
+
+<!-- ============ #8 (4)歯と食べること ============ -->
+<section class="slide type-b">
+  <span class="axis-tag seikatsu">生活・健康 ― 日常生活を通じた育ちの基盤</span>
+  <div class="theme-title seikatsu">(4) 歯と、食べることの育ち</div>
+  <div class="theme-sub">〜 一生の健康とQOLを支える幼児期の基盤づくり 〜</div>
+  <div class="body">
+    <div class="body-text seikatsu">
+      <ul>
+        <li>歯みがき習慣は、生涯にわたる口腔ケアの土台。<span class="hl-teal">フッ化物入り歯みがき剤</span>を上手に使いましょう。</li>
+        <li>食事の準備や、家族との食卓の経験が、「<span class="hl-teal">食べる楽しさ</span>」を育てます。</li>
+        <li>噛む、飲み込む、話す、呼吸する。口の機能は食べ方や食事環境の影響を受けます。</li>
+      </ul>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>歯みがき習慣とフッ化物の活用</li>
+        <li>口の機能の発達を促す生活習慣</li>
+        <li>家族との食事準備や共食</li>
+        <li>「食べる楽しさ」を重視した食育</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">8 / 17</div>
+</section>
+<div class="speaker">歯みがき習慣は、生涯にわたる口腔ケアの土台です。フッ化物入り歯みがき剤を上手に使うとよいですね。家族との食卓や食事の準備の経験が、「食べる楽しさ」を育てます。噛む、飲み込む、話す、呼吸する力も、食べ方や食事環境の影響を受けます。</div>
+
+<!-- ============ #9 (5)生活リズムと体のこと ============ -->
+<section class="slide type-b">
+  <span class="axis-tag seikatsu">生活・健康 ― 日常生活を通じた育ちの基盤</span>
+  <div class="theme-title seikatsu">(5) 生活リズムと、体のこと</div>
+  <div class="theme-sub">〜 数字ではなく、こどもが安心して育つことを軸に 〜</div>
+  <div class="body">
+    <div class="body-text seikatsu">
+      <ul>
+        <li>早寝、早起き、朝ごはん、運動。<span class="hl-teal">家庭の生活リズム</span>が、こどもの成長と気持ちの安定を支えます。</li>
+        <li>体重の数字や見た目への過度な注目は、こどもや家族に不必要な不安をうみます。</li>
+        <li>「できていない指摘」ではなく「<span class="hl-teal">今後の育ちにつながる気づき</span>」をいっしょに見つけます。</li>
+      </ul>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>基本的な生活習慣の形成</li>
+        <li>規則正しい食事リズム</li>
+        <li>成長と栄養を全体で評価</li>
+        <li>適切な睡眠習慣</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">9 / 17</div>
+</section>
+<div class="speaker">早寝、早起き、朝ごはん、運動。家庭の生活リズムが、こどもの成長と気持ちの安定を支えます。体重の数字や見た目への過度な注目は、こどもやご家族に不必要な不安をうみます。「できていない指摘」ではなく「気づき」をいっしょに見つけていきましょう。</div>
+
+<!-- ============ #10 (6)事故から守る ============ -->
+<section class="slide type-b">
+  <span class="axis-tag seikatsu">生活・健康 ― 日常生活を通じた育ちの基盤</span>
+  <div class="theme-title seikatsu">(6) 事故から守る</div>
+  <div class="theme-sub">〜 予防できる事故を、家庭でできる工夫で減らす 〜</div>
+  <div class="body">
+    <div class="body-text seikatsu">
+      <ul>
+        <li>食事中の窒息事故は、食材の大きさや姿勢、見守りの工夫で大きく減らせます（<span class="hl-teal">Safe Eating</span>※）。</li>
+        <li>家庭内外の転落や交通事故も、年齢に応じた気づきと環境調整で予防できます。</li>
+        <li>不慮の事故は、幼児期の主要な健康課題。日々の小さな工夫が命を守ります。</li>
+      </ul>
+      <div style="font-size: 14px; color: var(--gray); margin-top: 12px; padding-left: 28px;">※ Safe Eating：食材の大きさ、姿勢、見守りの工夫で食事中の窒息を防ぐ考え方</div>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>食事中の窒息事故防止（Safe Eating）</li>
+        <li>家庭内外の安全対策</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">10 / 17</div>
+</section>
+<div class="speaker">食事中の窒息事故は、食材の大きさや姿勢、見守りの工夫で大きく減らせます。これをSafe Eatingといいます。家庭内外の転落や交通事故も、年齢に応じた気づきと環境調整で予防できます。</div>
+
+<!-- ============ #11 (7)予防接種 ============ -->
+<section class="slide type-b">
+  <span class="axis-tag seikatsu">生活・健康 ― 日常生活を通じた育ちの基盤</span>
+  <div class="theme-title seikatsu">(7) 就学前の予防接種</div>
+  <div class="theme-sub">〜 「義務だから」ではなく「未来を守る選択」として 〜</div>
+  <div class="body">
+    <div class="body-text seikatsu">
+      <ul>
+        <li>就学前の1年間に、<span class="hl-teal">MRワクチン第2期</span>（麻しん風しん混合ワクチン）の接種期間があります。</li>
+        <li>こども自身を守るとともに、社会全体の感染症予防にもつながります。</li>
+        <li>不安なことや迷うことがあれば、健診の場で<span class="hl-teal">専門職にお気軽にご相談</span>ください。</li>
+      </ul>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>就学前に完了すべき予防接種の確認</li>
+        <li>MRワクチン第2期を含む理解の促進</li>
+        <li>ご家族の不安に寄り添った情報提供</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">11 / 17</div>
+</section>
+<div class="speaker">就学前の1年間に、MRワクチン第2期、つまり麻しんと風しんの混合ワクチンの接種期間があります。義務だから受けるのではなく、こども自身と社会全体を守る選択として、ご相談しながら判断していけるとよいですね。</div>
+
+<!-- ============ #12 (8)デジタル ============ -->
+<section class="slide type-b">
+  <span class="axis-tag kankyo">環境・社会 ― 家庭・地域・支える仕組み</span>
+  <div class="theme-title kankyo">(8) スマホやタブレットとのつきあい方</div>
+  <div class="theme-sub">〜 禁止より「家族で話し合って選ぶ」視点を 〜</div>
+  <div class="body">
+    <div class="body-text kankyo">
+      <ul>
+        <li>デジタル機器は、学びや表現の可能性を広げます。一方で、使い方によっては睡眠や気持ちの安定に影響することも。</li>
+        <li>就学後は一人一台端末の時代。今から「<span class="hl-green">家族で話し合えるデジタル習慣</span>」を育てておくと安心です。</li>
+        <li>「禁止する、制限する」だけでなく、「<span class="hl-green">いっしょに選ぶ</span>」視点が、こどもの自律につながります。</li>
+      </ul>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>スマートフォンやタブレットとの関わり方</li>
+        <li>就学後の一人一台端末への備え</li>
+        <li>親子で安心できるデジタル習慣</li>
+        <li>こどもの心を支える環境づくり</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">12 / 17</div>
+</section>
+<div class="speaker">デジタル機器は学びや表現の可能性を広げます。一方で、使いすぎは睡眠や気持ちに影響することも。禁止より、「いっしょに選ぶ、話し合う」家族の習慣を育てていけるとよいですね。</div>
+
+<!-- ============ #13 (9)地域で支える ============ -->
+<section class="slide type-b">
+  <span class="axis-tag kankyo">環境・社会 ― 家庭・地域・支える仕組み</span>
+  <div class="theme-title kankyo">(9) 地域でこどもを支える</div>
+  <div class="theme-sub">〜 「はじめの100か月」を、家庭、園、地域でいっしょに 〜</div>
+  <div class="body">
+    <div class="body-text kankyo">
+      <ul>
+        <li>こどもの育ちは、家庭の状況、地域の支え、社会の環境と密接につながっています。</li>
+        <li>慢性の病気や障害のあるこども、ヤングケアラー、外国にルーツのあるご家族など、<span class="hl-green">多様な背景</span>を持つこどもがいます。</li>
+        <li>早い気づきと、続いていく支援。<span class="hl-green">地域全体で見守る仕組み</span>が大切です。</li>
+      </ul>
+    </div>
+    <div class="keypoint-box">
+      <div class="keypoint-title">健診で大切にする視点</div>
+      <ul>
+        <li>「はじめの100か月」ビジョン</li>
+        <li>こどもの主体性と安心、挑戦</li>
+        <li>ご家庭や保護者への支援</li>
+        <li>多様な背景を持つこどもへの支援</li>
+        <li>児童虐待防止と居場所づくり</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-num">13 / 17</div>
+</section>
+<div class="speaker">こどもの育ちは、家庭、地域、社会と密接につながっています。慢性の病気や障害のあるこども、ヤングケアラー、外国にルーツのあるご家族など、多様な背景を持つこどもがいます。地域全体で見守る仕組みが大切です。</div>
+
+<!-- ============ #14 Take Home Message 再掲 ============ -->
+<section class="slide type-e">
+  <div class="thm-banner">
+    <b>9つのテーマで、こどもの育ちをいっしょに支える</b><br>
+    <span style="font-size: 16px; color: var(--gray);">健診の場、ご家庭、園、地域、それぞれの立場でできることがあります</span>
+  </div>
+  <div class="thm-grid">
+    <div class="thm-axis kodomo" style="background: var(--orange-light); border: 2px solid var(--orange); border-radius: 12px;">
+      <h3>こども</h3>
+      <p class="sub">権利・主体・発達</p>
+      <ul>
+        <li>(1) こどものこえを聴く</li>
+        <li>(2) 情緒の育ちを支える</li>
+      </ul>
+    </div>
+    <div class="thm-center">
+      <svg viewBox="0 0 200 200" class="illust">
+        <circle cx="60" cy="60" r="18" />
+        <path d="M42 90 Q42 130 60 130 Q78 130 78 90" />
+        <circle cx="140" cy="60" r="18" />
+        <path d="M122 90 Q122 130 140 130 Q158 130 158 90" />
+        <circle cx="100" cy="100" r="14" class="fill-warm" />
+        <path d="M86 130 Q86 160 100 160 Q114 160 114 130" class="fill-warm" />
+        <text x="100" y="190" text-anchor="middle" font-size="14" fill="#777" stroke="none">いっしょに育つ</text>
+      </svg>
+    </div>
+    <div class="thm-axis kankyo" style="background: var(--green-light); border: 2px solid var(--green); border-radius: 12px;">
+      <h3>環境・社会</h3>
+      <p class="sub">支える仕組み</p>
+      <ul>
+        <li>(8) デジタル環境とのつきあい</li>
+        <li>(9) 地域でこどもを支える</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top: 16px;">
+    <div class="thm-axis seikatsu" style="background: var(--teal-light); border: 2px solid var(--teal); border-radius: 12px; padding: 16px 24px;">
+      <h3 style="display: inline-block; margin-right: 16px;">生活・健康</h3>
+      <span class="sub" style="display: inline-block;">日常生活を通じた育ちの基盤</span>
+      <div style="font-size: 14px; margin-top: 6px; line-height: 1.6;">
+        (3) 遊びと運動・身体活動　／　(4) 歯と食べることの育ち　／　(5) 生活リズムと体のこと　／　(6) 事故から守る　／　(7) 就学前の予防接種
+      </div>
+    </div>
+  </div>
+  <div class="page-num">14 / 17</div>
+</section>
+<div class="speaker">今日お話しした9つのテーマを振り返ります。こども、生活、社会の3つの軸で、健診の場、ご家庭、園、地域、それぞれの立場でできることがあります。すべてを完璧にやろうとせず、できるところから始めていきましょう。</div>
+
+<!-- ============ #15 健診後の支援 ============ -->
+<section class="slide type-c">
+  <h2 style="color: var(--orange);">健診後の支援は、つづきます</h2>
+  <div class="lead">気になることがあれば、ひとりで抱えこまず、<br><span class="hl-orange">いっしょに考える伴走者</span>がいます。</div>
+  <div class="pyramid-wrap">
+    <div class="pyramid">
+      <div class="pyramid-layer pyramid-top">専門のサポート</div>
+      <div class="pyramid-layer pyramid-mid">個別の相談、家庭訪問</div>
+      <div class="pyramid-layer pyramid-bottom">すべてのご家庭への基本的な情報提供</div>
+    </div>
+    <div class="pyramid-desc">
+      <h4>段階的に支える仕組み</h4>
+      <p>地域には、すべてのご家庭への基本的な情報提供から、個別の相談、家庭訪問、そして必要なときの専門サポートまで、何段階かの支援があります。</p>
+      <p style="margin-top: 12px;"><b>「ちょっと気になる」レベルでも、相談してみてください。</b></p>
+    </div>
+  </div>
+  <div class="page-num">15 / 17</div>
+</section>
+<div class="speaker">健診で気になることがあれば、ひとりで抱え込まず、いっしょに考えていきましょう。地域には、すべてのご家庭への情報提供、個別相談、家庭訪問、そして必要なときには専門のサポートまで、何段階かの支援があります。「ちょっと気になる」レベルでも、お気軽にご相談ください。</div>
+
+<!-- ============ #16 ご家庭でできること ============ -->
+<section class="slide type-c">
+  <h2 style="color: var(--orange);">今日からできる、5つの小さなアクション</h2>
+  <div class="lead">完璧でなくて大丈夫。<span class="hl-orange">できるところから</span>はじめてみませんか。</div>
+  <div class="action-grid">
+    <div class="action-card">
+      <div class="action-num">1</div>
+      <div style="font-size: 36px;">🌙</div>
+      <p><b>リズムを整える</b><br>寝る、起きる、食べる時間をなるべく決める</p>
+    </div>
+    <div class="action-card">
+      <div class="action-num">2</div>
+      <div style="font-size: 36px;">🏃</div>
+      <p><b>いっしょに遊ぶ</b><br>体を動かす遊びを少しだけ毎日</p>
+    </div>
+    <div class="action-card">
+      <div class="action-num">3</div>
+      <div style="font-size: 36px;">👂</div>
+      <p><b>こえを聴く</b><br>「今日どんなことがあった？」と問いかける</p>
+    </div>
+    <div class="action-card">
+      <div class="action-num">4</div>
+      <div style="font-size: 36px;">🍽️</div>
+      <p><b>食事は見守る</b><br>いっしょに座って、姿勢や噛み方も気にかける</p>
+    </div>
+    <div class="action-card">
+      <div class="action-num">5</div>
+      <div style="font-size: 36px;">🤝</div>
+      <p><b>地域とつながる</b><br>困ったときは相談窓口や園、健診の場を活用</p>
+    </div>
+  </div>
+  <div class="page-num">16 / 17</div>
+</section>
+<div class="speaker">今日からできる小さなアクションをご紹介します。寝る、起きる、食べるリズムを整える、いっしょに体を動かす、こどものこえを聴く、食事中はいっしょに見守る、困ったときは地域の相談窓口を活用する。すべてを完璧にやらなくて大丈夫。できるところから始めてみてください。</div>
+
+<!-- ============ #17 クレジット ============ -->
+<section class="slide type-a">
+  <div class="cover-frame" style="border-color: var(--orange);">
+    <div class="cover-main" style="font-size: 44px;">ありがとうございました</div>
+  </div>
+  <div class="cover-sub">ご相談やお問い合わせは、お住まいの地域の保健所や、健診の窓口へお気軽にどうぞ</div>
+  <div class="cover-credit" style="margin-top: 60px;">
+    監修<br>
+    <b>日本小児保健協会</b><br>
+    健やか親子21・成育医療等基本方針推進委員会<br>
+    <span style="font-size: 14px; color: var(--gray);">提言「5歳児健康診査を活用した『こどもまんなか社会』の実現に向けた啓発の推進」（2026年5月21日）に基づく</span>
+  </div>
+  <div class="page-num">17 / 17</div>
+</section>
+<div class="speaker">本日はありがとうございました。ご相談のある方は、お気軽に窓口までお声がけください。今日のお話が、ご家庭でのちょっとした行動につながるとうれしいです。</div>
+
+</div>
+
+<script>
+  // Keyboard: 's' to toggle speaker mode
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 's' || e.key === 'S') {
+      document.getElementById('speakerToggle').click();
+    }
+  });
+</script>
+
+</body>
+</html>
