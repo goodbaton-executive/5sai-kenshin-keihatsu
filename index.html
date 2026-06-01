@@ -834,15 +834,31 @@
       </ul>
     </div>
     <div class="thm-center">
-      <svg viewBox="0 0 200 200" class="illust">
-        <!-- 家族3人のシンプル線画 -->
-        <circle cx="60" cy="60" r="18" />
-        <path d="M42 90 Q42 130 60 130 Q78 130 78 90" />
-        <circle cx="140" cy="60" r="18" />
-        <path d="M122 90 Q122 130 140 130 Q158 130 158 90" />
-        <circle cx="100" cy="100" r="14" class="fill-warm" />
-        <path d="M86 130 Q86 160 100 160 Q114 160 114 130" class="fill-warm" />
-        <text x="100" y="190" text-anchor="middle" font-size="14" fill="#777" stroke="none">いっしょに育つ</text>
+      <svg viewBox="0 0 200 200" class="illust" stroke-linecap="round" stroke-linejoin="round">
+        <!-- 背景の柔らかな円（家族を包む雰囲気） -->
+        <ellipse cx="100" cy="110" rx="90" ry="75" fill="#FDF1E8" stroke="none" />
+
+        <!-- 左の大人 -->
+        <ellipse cx="55" cy="55" rx="13" ry="14" />
+        <path d="M40 70 Q34 105 42 140 L42 168" fill="none" />
+        <path d="M70 70 Q76 105 68 140 L68 168" fill="none" />
+        <path d="M40 88 Q60 96 78 105" fill="none" />
+
+        <!-- 右の大人 -->
+        <ellipse cx="145" cy="55" rx="13" ry="14" />
+        <path d="M130 70 Q124 105 132 140 L132 168" fill="none" />
+        <path d="M160 70 Q166 105 158 140 L158 168" fill="none" />
+        <path d="M160 88 Q140 96 122 105" fill="none" />
+
+        <!-- 真ん中のこども -->
+        <ellipse cx="100" cy="100" rx="11" ry="12" class="fill-warm" stroke="#333" />
+        <path d="M89 113 Q86 140 92 162 L92 178" stroke="#333" fill="#FBDDB6" />
+        <path d="M111 113 Q114 140 108 162 L108 178" stroke="#333" fill="#FBDDB6" />
+
+        <!-- 中央の小さなハート（オレンジアクセント） -->
+        <path d="M100 80 C96 76 92 80 94 84 L100 90 L106 84 C108 80 104 76 100 80 Z" class="fill-orange" stroke="none" />
+
+        <text x="100" y="195" text-anchor="middle" font-size="13" fill="#777" stroke="none">いっしょに育つ</text>
       </svg>
     </div>
     <div class="thm-axis kankyo" style="background: var(--green-light); border: 2px solid var(--green); border-radius: 12px;">
