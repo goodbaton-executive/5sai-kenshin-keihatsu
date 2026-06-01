@@ -542,6 +542,159 @@
   .illust .fill-orange { fill: var(--orange); stroke: var(--orange); }
   .illust .fill-warm { fill: #F8C9A1; stroke: #F8C9A1; }
 
+  /* Mobile / Tablet */
+  @media (max-width: 900px) {
+    body { padding: 8px 0; }
+
+    .controls {
+      top: 8px;
+      right: 8px;
+    }
+    .controls button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    .deck {
+      padding: 0 8px;
+    }
+
+    .slide {
+      aspect-ratio: auto;
+      border-width: 14px;
+      padding: 24px 20px;
+      margin-bottom: 16px;
+      min-height: auto;
+    }
+
+    /* Cover / Type A */
+    .cover-title { font-size: 16px; letter-spacing: 0.1em; }
+    .cover-main { font-size: 30px; line-height: 1.4; margin-bottom: 20px; }
+    .cover-sub { font-size: 15px; margin-bottom: 36px; padding: 0 8px; }
+    .cover-credit { font-size: 13px; margin-top: 24px; line-height: 1.8; }
+    .cover-frame { padding: 20px 24px; margin-bottom: 20px; }
+
+    /* Theme slides Type B */
+    .axis-tag { font-size: 13px; padding: 6px 14px; }
+    .theme-title { font-size: 24px; line-height: 1.4; margin-bottom: 8px; }
+    .theme-sub { font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+
+    .slide.type-b .body {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .body-text { font-size: 15px; line-height: 1.9; }
+    .body-text li { padding-left: 22px; margin-bottom: 12px; }
+    .body-text li::before { top: 4px; font-size: 11px; }
+
+    .keypoint-box { padding: 16px 18px; }
+    .keypoint-title { font-size: 15px; margin-bottom: 10px; }
+    .keypoint-box li { font-size: 14px; padding-left: 22px; margin-bottom: 8px; }
+
+    /* Type C */
+    .slide.type-c h2 { font-size: 24px; line-height: 1.4; margin-bottom: 14px; }
+    .slide.type-c .lead { font-size: 15px; line-height: 1.8; margin-bottom: 24px; }
+    .slide.type-c .closing { font-size: 14px; margin-top: 20px; }
+    .slide.type-c .visual { margin: 12px 0; }
+
+    /* Timeline */
+    .timeline {
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding-bottom: 8px;
+      width: 100%;
+    }
+    .timeline-node { min-width: 56px; }
+    .timeline-dot { width: 16px; height: 16px; }
+    .timeline-dot.active { width: 26px; height: 26px; }
+    .timeline-label { font-size: 12px; }
+    .timeline-label.active { font-size: 14px; }
+    .timeline-line { min-width: 16px; height: 3px; }
+
+    /* 3要素 (slide #2) */
+    .slide.type-c .visual > div[style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+    }
+
+    /* Type D - Values BPS */
+    .slide.type-d h2 { font-size: 20px; padding: 8px 16px; }
+    .slide.type-d .happy { font-size: 16px; line-height: 1.6; margin: 16px 0 20px; }
+    .slide.type-d .grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .value-list { font-size: 15px; line-height: 1.9; }
+    .bps-label { font-size: 16px; }
+    .venn {
+      width: 280px;
+      height: 220px;
+      transform: scale(0.6) !important;
+      transform-origin: center !important;
+      margin: -40px auto !important;
+    }
+
+    /* Type E - Take Home Message */
+    .thm-banner { font-size: 14px; padding: 12px 14px; line-height: 1.7; }
+    .thm-banner b { font-size: 15px; }
+    .thm-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .thm-axis { padding: 14px 16px; }
+    .thm-axis h3 { font-size: 20px; margin-bottom: 2px; }
+    .thm-axis p.sub { font-size: 12px; margin-bottom: 8px; }
+    .thm-axis ul { font-size: 13px; line-height: 1.7; }
+    .thm-axis li { margin-bottom: 2px; }
+    .thm-center svg { width: 100px; height: 100px; }
+    .thm-center { padding: 4px; }
+
+    /* Pyramid (#15) */
+    .pyramid-wrap {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .pyramid-layer { font-size: 14px; padding: 10px 14px; }
+    .pyramid-top { width: 160px; }
+    .pyramid-mid { width: 240px; }
+    .pyramid-bottom { width: 100%; max-width: 320px; }
+    .pyramid-desc { font-size: 14px; line-height: 1.8; max-width: 100%; }
+    .pyramid-desc h4 { font-size: 16px; }
+
+    /* Action grid (#16) */
+    .action-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .action-card { padding: 12px 8px; gap: 6px; }
+    .action-num { width: 28px; height: 28px; line-height: 28px; font-size: 15px; }
+    .action-card p { font-size: 12px; line-height: 1.5; }
+    .action-card div[style*="font-size: 36px"] { font-size: 28px !important; }
+
+    .page-num { bottom: 8px; right: 14px; font-size: 11px; }
+
+    /* Speaker script */
+    .speaker {
+      padding: 12px 14px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .speaker::before { font-size: 11px; }
+  }
+
+  /* スマホ縦 */
+  @media (max-width: 480px) {
+    .slide {
+      border-width: 10px;
+      padding: 18px 14px;
+    }
+    .cover-main { font-size: 24px; }
+    .theme-title { font-size: 20px; }
+    .slide.type-c h2 { font-size: 20px; }
+    .controls { flex-direction: column; gap: 6px; }
+  }
+
   /* Print */
   @media print {
     body { background: white; padding: 0; }
